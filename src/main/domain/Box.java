@@ -5,40 +5,52 @@ package domain;
  */
 public class Box {
 
-    private Edge rightEdge;
-    private Edge leftEdge;
-    private Edge upEdge;
-    private Edge downEdge;
+    private final int weight;
+    private GridSpot rightEdge;
+    private GridSpot leftEdge;
+    private GridSpot topEdge;
+    private GridSpot bottomEdge;
 
-    public Edge getRightEdge() {
+    public Box(int weight) {
+        this.weight = weight;
+    }
+
+    public GridSpot getRightEdge() {
         return rightEdge;
     }
 
-    public void setRightEdge(Edge rightEdge) {
+    public void setRightEdge(GridSpot rightEdge) {
         this.rightEdge = rightEdge;
     }
 
-    public Edge getLeftEdge() {
+    public GridSpot getLeftEdge() {
         return leftEdge;
     }
 
-    public void setLeftEdge(Edge leftEdge) {
+    public void setLeftEdge(GridSpot leftEdge) {
         this.leftEdge = leftEdge;
     }
 
-    public Edge getUpEdge() {
-        return upEdge;
+    public GridSpot getTopEdge() {
+        return topEdge;
     }
 
-    public void setUpEdge(Edge upEdge) {
-        this.upEdge = upEdge;
+    public void setTopEdge(GridSpot topEdge) {
+        this.topEdge = topEdge;
     }
 
-    public Edge getDownEdge() {
-        return downEdge;
+    public GridSpot getBottomEdge() {
+        return bottomEdge;
     }
 
-    public void setDownEdge(Edge downEdge) {
-        this.downEdge = downEdge;
+    public void setBottomEdge(GridSpot bottomEdge) {
+        this.bottomEdge = bottomEdge;
+    }
+
+    @Override
+    public String toString() {
+        return (topEdge == null ? ".   ." : ".___.") + "\n" +
+                (rightEdge == null ? " " : "|") + " " + weight + " " + (leftEdge == null ? " " : "|") + "\n" +
+                (bottomEdge == null ? ".   ." : ".___.");
     }
 }
