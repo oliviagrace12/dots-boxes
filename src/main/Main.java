@@ -1,6 +1,7 @@
 import domain.Grid;
 import domain.Player;
 import logic.MiniMaxAlgo;
+import logic.PrunedMiniMaxAlgo;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -21,7 +22,7 @@ public class Main {
 
         System.out.println("Please enter a number for the AI depth of search: ");
         int depth = Integer.parseInt(reader.readLine());
-        MiniMaxAlgo miniMaxAlgo = new MiniMaxAlgo(depth);
+        PrunedMiniMaxAlgo miniMaxAlgo = new PrunedMiniMaxAlgo(depth);
 
         System.out.println("Starting board:");
         System.out.println(grid);
